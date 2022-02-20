@@ -30,7 +30,13 @@ def hello_test():
         ret_val = "<p> GET </p>"
     else:
         print(request.form['txt1'])
-        print(request.form['txt2'])gb
+        print(request.form['txt2'])
         ret_val = "<p> NOT GET </p>"
-
+        
     return ret_val
+
+@app.route("/jsontest",methods = ['POST','GET'])
+def hello_jsontest():
+    content = request.get_json()
+    print(content)
+    return ""
